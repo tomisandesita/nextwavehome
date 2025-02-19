@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next wave</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="icon" href="image/servericon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/servericon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1><div class="clickname"><a href="https://discord.gg/nextwaves"><img src="image/servericon.png" alt="">Next wave</a>　<a href="index.html" class="yesunder">Home</a>　<a href="about.html" class="yesunder">about</a></div></h1>
+    </header>
+
+    <main>
+
+            <br><br><br><br><br><br><br><br><br>
+            <div class="kakkoii">
+                <h1>あの栄光はまた訪れる...</h1>
+            </div>
+            <div class="scroll">
+                <span>Scroll</span>
+            </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <div class="kakkoii">
+            <h1><a class="clickname" href="https://discord.gg/nextwaves">　🌊Next wave🌊<br>🌃Like the MTC🌇</a><br></h1>
+            <br>
+        </div>
+        <div class="kakkoii"><p>2023年後半のMTCのような、<br> 盛り上がる楽しいサーバーを目指す、<br> 新しい雑談界隈の波。</p></div>
+
+    </main>
+
+    <footer></footer>
+
+<script>
+let lastScrollY = window.scrollY;
+let isScrollingToBottom = false;
+
+window.addEventListener("scroll", function() {
+    let currentScrollY = window.scrollY;
+    let documentHeight = document.documentElement.scrollHeight;
+    let windowHeight = window.innerHeight;
+
+    if (currentScrollY < lastScrollY) {
+        window.scrollTo(0, lastScrollY);
+        return;
+    }
+
+    if (currentScrollY > lastScrollY && !isScrollingToBottom) {
+        console.log("下にスクロール");
+
+        isScrollingToBottom = true; 
+        window.scrollTo({
+            top: documentHeight - windowHeight,
+            behavior: "smooth"
+        });
+
+
+        setTimeout(() => {
+            isScrollingToBottom = false;
+        }, 1000);
+    }
+
+    lastScrollY = currentScrollY;
+});
+
+</script>
+</body>
+</html>
