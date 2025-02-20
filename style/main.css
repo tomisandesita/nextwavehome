@@ -96,7 +96,7 @@ img{
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* 影を薄く（透明度15%）追加 */
   box-sizing: border-box; /* 要素の幅と高さの計算にパディングとボーダーを含める */
   padding: 1rem 1rem; /* パディングを1remに */
-  margin:  -27px auto; /* 上下のマージンを20px、左右のマージンを自動で中央揃えに */
+  margin:  1px auto; /* 上下のマージンを20px、左右のマージンを自動で中央揃えに */
   text-align: center; /* テキストを中央配置に */
   color: white !important; /* テキスト色を白に強制指定 */
   background-image: linear-gradient(to right, #00188d 50%, #7fbdff 50%); /* 背景のデュアルトーン */
