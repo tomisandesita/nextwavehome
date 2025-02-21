@@ -106,6 +106,10 @@ window.addEventListener("scroll", function() {
     // スクロールしたらCookieを設定し、以後最下部固定
     window.onscroll = function() {
         setCookie("scrolled", "true", 30); // 30日間記録
+    function acceptCookies() {
+        setCookie("cookieAccepted", "true", 365); // 1年間有効
+        document.getElementById("cookiePopup").style.display = "none";
+        }
     };
 </script>
 </body>
