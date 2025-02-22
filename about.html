@@ -7,59 +7,192 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" href="image/servericon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="image/servericon.png">
-    <style>
+    <meta property="og:title" content="Nextwave">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nextwaves.pages.dev/">
+    <meta property="og:image" content="https://nextwaves.pages.dev/image/servericon.png">
+    <meta property="og:image:width" content="120">
+    <meta property="og:description" content="次の雑談界隈の波はここ。そんな雑談鯖のホームページ。">
+    <meta property="og:site_name" content="専属さん">
+    <meta property="og:locale" content="ja_JP">
+    <link rel="icon" href="https://neztwaves.pages.dev/image/servericon.png" type="image/png" sizes="32x32">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="専属さん">
+    <meta name="twitter:description" content="次の雑談界隈の波はここ。そんな雑談鯖のホームページ。">
+    <meta name="twitter:image" content="https://neztwaves.pages.dev/image/servericon.png">
 
+    <style>
+/* タブのスタイル */
+.tabs {
+  overflow: hidden;
+  border: 1px solid #cccccc00;
+}
+
+/* タブリンクのスタイル */
+.tablink {
+  
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  background-color: #cccccc00;
+}
+
+/* 選択されたタブリンクのスタイル */
+.tablink.active {
+  background-color: #cccccc00;
+}
+
+/* タブコンテンツのスタイル */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+.tabcontent.fade {
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  
+}
     </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1><div class="clickname"><a href="https://discord.gg/nextwaves"><img src="image/servericon.png" alt="">Next wave</a>　　<a href="index.html" class="yesunder">Home</a>　<a href="concept.html" class="yesunder">Concept</a></div></h1>
-    </header>
+    <header class="c-header c-hamburger-menu"><!-- 追記 クラスを追記 -->
+        <div class="clickname tabs">
+            <a href="https://discord.gg/nextwaves"><img src="image/servericon.png" alt="">Next wave</a>
+            <a href="index.html" class="yesunder">Home</a>
+            <a href="concept.html" class="yesunder">Concept</a>
+            
+        </div>
+        <input type="checkbox" name="hamburger" id="hamburger" class="c-hamburger-menu__input"/><!-- 追記 idはlabelのforと同じにする -->
+        <label for="hamburger" class="c-hamburger-menu__bg"></label><!-- 追記 ハンバーガーメニュを開いた時の背景 -->
+        <ul class="c-header__list c-hamburger-menu__list"><!-- 追記 クラスを追記 -->
+          <li class="c-header__list-item">
+            <button class="tablink active" onclick="openTab('tab1')"><a class="clickname" href="#">serverinfo</a></button>
+          </li>
+          <li class="c-header__list-item">
+            <button class="tablink active" onclick="openTab('tab2')"><a class="clickname" href="#">concept</a></button>
+          </li>
+          <li class="c-header__list-item">
+            <button class="tablink active" onclick="openTab('tab3')"><a class="clickname" href="#">learnmore</a></button>
+          </li>
+        </ul>
+        <label for="hamburger" class="c-hamburger-menu__button"><!-- 追記 ハンバーガーメニューのボタン -->
+          <span class="c-hamburger-menu__button-mark"></span>
+          <span class="c-hamburger-menu__button-mark"></span>
+          <span class="c-hamburger-menu__button-mark"></span>
+        </label>
+      </header>
 
     <main>
-
-            <br><br>
+        <br><br><br>
+        <div id="tab1" class="tabcontent" style="display: block;">
             <div class="kakkoii">
                 <h1>About server</h1>
             </div>
-                <h3>serverinfo</h3>
-                <p>Owner・とみー（izpf）<br>Serverlink・<a class="yesunder2" href="https://discord.gg/nextwaves">https://discord.gg/nextwaves</a><br><p id="daysAgo"></p><p id="memberCount">メンバー数を取得中...</p></p>
+            <h3>serverinfo</h3>
+            <p>Owner・とみー（izpf）<br>
+                Serverlink・<a class="yesunder2" href="https://discord.gg/nextwaves">https://discord.gg/nextwaves</a><br>
+                <p id="daysAgo"></p>
+                <p id="memberCount">メンバー数を取得中...</p>
+            </p>
+        </div>
 
+        <div id="tab2" class="tabcontent">
+            <br><br><div class="kakkoii"><p>雑談をメインとした、経済BOTを利用した活動や様々なイベントが <br> 行われているサーバー。 </p></div><div class="tabs"><button class="tablink swipe-button" onclick="openTab('tab3')" style="position: absolute; left: 50%;"><a href="#" class="clickname">Learn more</a></button></div>
+
+        </div>
+        
+        <div id="tab3" class="tabcontent">
+            <div class="kakkoii">
+                <h1>Learn more</h1>
+            </div>
+            <!-- 詳しくサーバーについて文字を入れる -->
+            <ul>
+                <li><h4>経済が発展している！</h4></li>
+
+                    <p style="margin:0.5em 0;">サーバー内での経済が発展しています！<br>特に、日本政府に似た制度（議員など）であったり、<br>財閥やカジノなど、たくさんの物がリアルです！</p>
+                <li><h4></h4></li>
+                <li><h4></h4></li>
+                <li><h4></h4></li>
+                <li><h4></h4></li>
+                <li><h4></h4></li>
+                <li><h4></h4></li>
+                <li><h4></h4></li>
+                <li><h4></h4></li>
+            </ul>
+            <!-- ここまで -->
+        </div>
     </main>
 
     <footer></footer>
 
 <script>
-        function calculateDaysAgo(targetDate) {
-            const today = new Date(); 
-            const pastDate = new Date(targetDate); 
-            const diffTime = today - pastDate; 
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
-            return "created・" + diffDays + " Days ago";
-        }
-        document.getElementById("daysAgo").textContent = calculateDaysAgo("2025-2-8");
-        async function fetchMemberCount() {
-            const apiUrl = "https://discord.com/api/guilds/1337669260096307212/widget.json";
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("tab1").style.display = "block"; // 初回表示時にTab1を表示
+    document.querySelector(".tablink").classList.add("active"); // 初回表示時にTab1のボタンをアクティブにする
+});
 
-            try {
-                const response = await fetch(apiUrl);
-                if (!response.ok) throw new Error("データの取得に失敗しました");
+function openTab(tabName) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).style.display = "block";
+    
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add("active");
+    }
+}
 
-                const data = await response.json();
-                const memberCount = data.presence_count; // 現在のオンライン人数
+function calculateDaysAgo(targetDate) {
+    const today = new Date(); 
+    const pastDate = new Date(targetDate); 
+    const diffTime = today - pastDate; 
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
+    return "created・" + diffDays + " Days ago";
+}
+document.getElementById("daysAgo").textContent = calculateDaysAgo("2025-2-8");
 
-                document.getElementById("memberCount").textContent = `オンラインメンバー・${memberCount}人`;
-            } catch (error) {
-                document.getElementById("memberCount").textContent = "メンバー数を取得できませんでした";
-                console.error("エラー:", error);
-            }
-        }
+async function fetchMemberCount() {
+    const apiUrl = "https://discord.com/api/guilds/1337669260096307212/widget.json";
 
-        fetchMemberCount();
-        setInterval(fetchMemberCount, 60000); // 60秒ごとに更新
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("データの取得に失敗しました");
+
+        const data = await response.json();
+        const memberCount = data.presence_count; // 現在のオンライン人数
+
+        document.getElementById("memberCount").textContent = `オンラインメンバー・${memberCount}人`;
+    } catch (error) {
+        document.getElementById("memberCount").textContent = "メンバー数を取得できませんでした";
+        console.error("エラー:", error);
+    }
+}
+
+fetchMemberCount();
+setInterval(fetchMemberCount, 60000); // 60秒ごとに更新
 </script>
 </body>
 </html>
